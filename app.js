@@ -152,7 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Beauty (8).jpg",
         "Beauty (9).jpg",
         "Beauty (10).jpg",
-        "Beauty (11).jpg"
+        "Beauty (11).jpg",
+        "Beauty (12).jpg"
       ]
     }
 
