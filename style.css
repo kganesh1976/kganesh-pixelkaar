@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
 
 :root {
@@ -141,6 +142,8 @@ nav a:hover {
 .hero h1 span {
   color: var(--gold);
 }
+
+/* HERO TEXT */
 
 .hero > p:not(.eyebrow) {
   max-width: 540px;
@@ -741,9 +744,32 @@ footer {
     padding: 75px 7%;
   }
 
+  /* MOBILE PORTFOLIO */
+
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
     gap: 35px;
+    overflow: visible !important;
+  }
+
+  .portfolio-grid .portfolio-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .portfolio-grid .portfolio-card img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    visibility: visible !important;
   }
 
   .portfolio-image {
@@ -757,7 +783,14 @@ footer {
   }
 
   .portfolio-card h3 {
+    display: block;
     font-size: 16px;
+    visibility: visible;
+  }
+
+  .category-hint {
+    display: block;
+    visibility: visible;
   }
 
   /* GALLERY MOBILE */
@@ -879,6 +912,7 @@ footer {
 /* SMALL MOBILE HEADER */
 
 @media (max-width: 380px) {
+
   .header .logo {
     font-size: 24px;
     letter-spacing: .5px;
@@ -929,6 +963,7 @@ footer {
 }
 
 @media (max-width: 600px) {
+
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
