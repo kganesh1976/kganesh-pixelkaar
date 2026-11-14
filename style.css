@@ -303,7 +303,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* MASONRY GALLERY */
+/* MASONRY GALLERY - ORIGINAL PHOTO PROPORTIONS */
 
 .gallery-grid {
   columns: 3;
@@ -793,7 +793,7 @@ footer {
     visibility: visible;
   }
 
-  /* GALLERY MOBILE */
+  /* GALLERY MOBILE - NATURAL PHOTO RATIO */
 
   .gallery-grid {
     columns: 2;
@@ -802,6 +802,11 @@ footer {
 
   .gallery-item {
     margin-bottom: 12px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
   }
 
   .top-back {

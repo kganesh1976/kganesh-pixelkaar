@@ -51,12 +51,28 @@ document.addEventListener("DOMContentLoaded", function () {
         "wedding-4.jpg",
         "wedding-5.jpg",
         "wedding-6.jpg",
-        "wedding-7.jpg"
+        "wedding-7.jpg",
+        "wedding-8.jpg",
+        "wedding-9.jpg",
+        "wedding-10.jpg",
+        "wedding-11.jpg",
+        "wedding-12.jpg",
+        "wedding-13.jpg",
+
+        // NEW WEDDING PHOTOS - 14 NOVEMBER 2026
+        "087A7042.JPG",
+        "087A7060.JPG",
+        "087A7100.JPG",
+        "087A7101.JPG",
+        "087A7103.JPG",
+        "087A7205.JPG",
+        "087A7228.JPG",
+        "087A7232.JPG"
       ]
     },
 
 
-    // NEW WEDDING ALBUM DESIGNING GALLERY
+    // WEDDING ALBUM DESIGNING GALLERY
 
     weddingAlbum: {
       eyebrow: "PROFESSIONAL WEDDING ALBUM DESIGNING",
@@ -101,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Our Corporate Gallery",
       folder: "images/corporate/",
       files: [
+        // EXISTING CORPORATE PHOTOS
         "corporate-1.jpg",
         "corporate-2.jpg",
         "corporate-3.jpg",
@@ -114,7 +131,26 @@ document.addEventListener("DOMContentLoaded", function () {
         "corporate-11.jpg",
         "corporate-12.jpg",
         "corporate-13.jpg",
-        "corporate-14.jpg"
+        "corporate-14.jpg",
+
+        // NEW CORPORATE PHOTOS
+        "Corporate- (1).JPG",
+        "Corporate- (2).jpg",
+        "Corporate- (3).jpg",
+        "Corporate- (4).jpg",
+        "Corporate- (5).jpg",
+        "Corporate- (6).jpg",
+        "Corporate- (7).jpg",
+        "Corporate- (8).jpg",
+        "Corporate- (9).jpg",
+        "Corporate- (10).jpg",
+        "Corporate- (11).jpg",
+        "Corporate- (12).jpg",
+        "Corporate- (13).jpg",
+        "Corporate- (14).jpg",
+        "Corporate- (15).JPG",
+        "Corporate- (16).jpg",
+        "Corporate-.jpg"
       ],
       tryUppercaseExtension: true
     },
@@ -153,7 +189,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "Beauty (9).jpg",
         "Beauty (10).jpg",
         "Beauty (11).jpg",
-        "Beauty (12).jpg"
+        "Beauty (12).jpg",
+
+        // NEW BEAUTY PHOTOS
+        "Beauty (13).jpg",
+        "Beauty (14).jpg"
       ]
     }
 
