@@ -54,7 +54,7 @@ header.header {
   display: flex;
   align-items: center;
   flex: 0 0 auto;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: 2px;
   line-height: 1.1;
@@ -709,7 +709,7 @@ footer {
   }
 
   .header .logo {
-    font-size: 29px;
+    font-size: 25px;
     letter-spacing: 1px;
   }
 
@@ -919,7 +919,7 @@ footer {
 @media (max-width: 380px) {
 
   .header .logo {
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: .5px;
   }
 

@@ -4,7 +4,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // COPYRIGHT YEAR
-  // Updates only the copyright year, without overwriting other footer text.
 
   const yearElement = document.getElementById("copyrightYear");
 
@@ -41,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const galleryData = {
 
     wedding: {
-      eyebrow: "WEDDING & PRE-WEDDING",
-      title: "Our Wedding Gallery",
+      eyebrow: "WEDDING PHOTOGRAPHY",
+      title: "Wedding Photography Gallery",
       folder: "images/wedding/",
       files: [
         "wedding-1.jpg",
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "wedding-12.jpg",
         "wedding-13.jpg",
 
-        // NEW WEDDING PHOTOS - 14 NOVEMBER 2026
+        // NEW WEDDING PHOTOS
         "087A7042.JPG",
         "087A7060.JPG",
         "087A7100.JPG",
@@ -156,18 +155,41 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
 
+    // PRE-WEDDING PHOTO MANIPULATION & ENHANCEMENT
+
     manipulation: {
-      eyebrow: "PHOTO MANIPULATION & POSTER DESIGNING",
-      title: "Our Photo Manipulation Gallery",
-      folder: "images/manipulation/",
+      eyebrow: "PRE-WEDDING PHOTO MANIPULATION & ENHANCEMENT",
+      title: "Pre-Wedding Photo Manipulation & Enhancement",
+      folder: "images/pre-wedding/",
       files: [
+
+        // EXISTING 7 PHOTOS
         "manipulation-1.jpg",
         "manipulation-2.jpg",
         "manipulation-3.jpg",
         "manipulation-4.jpg",
         "manipulation-5.jpg",
         "manipulation-6.jpg",
-        "manipulation-7.jpg"
+        "manipulation-7.jpg",
+
+        // NEW 17 PHOTOS
+        "DSC06206.jpeg",
+        "DSC08415.jpeg",
+        "DSC08470.jpeg",
+        "_01A8290A.jpg",
+        "_01A8360.JPG",
+        "_01A8379 copy.jpg",
+        "_01A8385 copy.jpg",
+        "0B3A0077-GAN.jpg",
+        "0B3A0231-GAN.jpg",
+        "0B3A0380-GAN.jpg",
+        "0B3A1749-GAN.jpg",
+        "0B3A1774 copy.jpg",
+        "0B3A2114 copy.jpg",
+        "0B3A9142-GAN.jpg",
+        "DSC05742A.jpg",
+        "DSC05818.JPG",
+        "DSC05913 Acopy 2.jpg"
       ]
     },
 
@@ -190,8 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Beauty (10).jpg",
         "Beauty (11).jpg",
         "Beauty (12).jpg",
-
-        // NEW BEAUTY PHOTOS
         "Beauty (13).jpg",
         "Beauty (14).jpg"
       ]
@@ -300,7 +320,6 @@ document.addEventListener("DOMContentLoaded", function () {
       image.src = data.folder + filename;
 
       // CORPORATE IMAGE EXTENSION FALLBACK
-      // Try .JPG if .jpg is not found, and vice versa.
 
       if (data.tryUppercaseExtension) {
 
@@ -333,6 +352,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
 
+
+      // IMAGE CLICK - OPEN LIGHTBOX
 
       image.addEventListener("click", function () {
 
@@ -514,6 +535,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   console.log("K. GANESH PIXELKAAR website initialized.");
-  console.log("Wedding, Wedding Album Designing, Newborn, Corporate, Manipulation and Beauty galleries ready.");
+  console.log("Wedding Photography, Wedding Album Designing, Newborn, Corporate, Pre-Wedding Photo Manipulation and Beauty galleries ready.");
 
 });
