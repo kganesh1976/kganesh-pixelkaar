@@ -981,3 +981,58 @@ footer {
     height: 31px;
   }
 }
+/* PROMISE AND CONTACT SECTION VISUAL UPDATE */
+
+/* Reduce space after Our Promise */
+.our-promise {
+  padding-bottom: 55px;
+}
+
+/* GOLDEN CONTACT SECTION */
+.contact {
+  background: #C6A66B;
+  color: #111111;
+  padding: 75px 10%;
+  margin-top: 0;
+}
+
+/* Contact heading */
+.contact h2 {
+  color: #111111;
+}
+
+/* Contact eyebrow */
+.contact .eyebrow {
+  color: #333333;
+}
+
+/* Contact description */
+.contact > p:not(.eyebrow) {
+  color: #333333;
+}
+
+/* Contact button */
+.contact .btn {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #111111;
+}
+
+/* Contact button hover */
+.contact .btn:hover {
+  background: transparent;
+  color: #111111;
+  border-color: #111111;
+}
+
+/* MOBILE SPACING */
+@media (max-width: 768px) {
+  .our-promise {
+    padding-bottom: 45px;
+  }
+
+  .contact {
+    padding: 60px 7%;
+  }
+}
+
