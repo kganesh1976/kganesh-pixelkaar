@@ -38,46 +38,14 @@ button {
 
 /* HEADER */
 
-header.header {
-  height: 100px;
-  min-height: 100px;
-  padding: 10px 7%;
+.header {
+  width: 100%;
+  padding: 25px 7%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  overflow: visible;
-}
-
-.header .logo {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  font-size: 30px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  line-height: 1.1;
-  color: #111111;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.header .logo span {
-  color: var(--gold);
-}
-
-.header nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1 1 auto;
-  flex-wrap: nowrap;
-  gap: 25px;
-}
-
-.header nav a {
-  white-space: nowrap;
+  background: white;
+  border-bottom: 1px solid var(--border);
 }
 
 .logo {
@@ -87,7 +55,7 @@ header.header {
 }
 
 .logo span {
-  color: #888;
+  color: var(--gold);
 }
 
 nav {
@@ -142,8 +110,6 @@ nav a:hover {
 .hero h1 span {
   color: var(--gold);
 }
-
-/* HERO TEXT */
 
 .hero > p:not(.eyebrow) {
   max-width: 540px;
@@ -224,8 +190,8 @@ h2 {
   filter: grayscale(100%);
   transform: scale(1);
   transition:
-    filter 0.8s ease,
-    transform 0.8s ease;
+    filter .8s ease,
+    transform .8s ease;
 }
 
 .portfolio-card:hover .portfolio-image {
@@ -265,6 +231,8 @@ h2 {
   cursor: pointer;
   transition: all .3s ease;
 }
+
+/* TOP BUTTON */
 
 .top-back {
   display: inline-flex;
@@ -477,28 +445,68 @@ body.lightbox-open {
   margin-bottom: 12px;
 }
 
-.service-grid p,
-.about > p:not(.eyebrow),
-.contact > p:not(.eyebrow) {
+.service-grid p {
   color: #777;
   font-size: 15px;
   max-width: 650px;
 }
 
-/* ABOUT */
+/* ABOUT SECTION - DESKTOP BLACK & GOLD */
 
 .about {
-  background: white;
+  background: #080808;
+  color: #fff;
 }
 
-.about h2 {
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 65px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-content {
+  min-width: 0;
+}
+
+.about-content .eyebrow {
+  color: var(--gold);
+}
+
+.about-content h2 {
+  color: #fff;
   max-width: 650px;
+  margin-bottom: 45px;
 }
 
-.about p strong {
-  font-size: calc(1em + 2px);
+.about-content p:not(.eyebrow) {
+  color: #ddd;
+  font-size: 15px;
+  max-width: 720px;
+  margin-bottom: 12px;
+}
+
+.about-content strong {
+  color: #fff;
   font-weight: 700;
-  color: #111;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  overflow: hidden;
+  background: #000;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* PROCESS */
@@ -554,41 +562,12 @@ body.lightbox-open {
   color: #111;
 }
 
-/* CONTACT */
-
-.contact {
-  background: #111;
-  color: white;
-  text-align: center;
-}
-
-.contact h2 {
-  max-width: 750px;
-  margin: 0 auto 25px;
-}
-
-.contact > p:not(.eyebrow) {
-  margin: 0 auto 35px;
-  color: #aaa;
-}
-
-.contact .btn {
-  background: white;
-  color: black;
-}
-
-.contact .btn:hover {
-  background: transparent;
-  color: white;
-}
-
 /* OUR PROMISE */
 
 .our-promise {
-  background: #111111;
-  color: #ffffff;
-  padding: 100px 6%;
-  border-top: 1px solid rgba(255, 255, 255, .10);
+  background: #111;
+  color: #fff;
+  padding: 100px 6% 55px;
 }
 
 .promise-container {
@@ -602,15 +581,15 @@ body.lightbox-open {
   font-size: 11px;
   letter-spacing: 3px;
   font-weight: 600;
-  margin: 0 0 18px;
+  margin-bottom: 18px;
 }
 
 .promise-container h2 {
-  color: #ffffff;
+  color: #fff;
   font-family: 'Playfair Display', serif;
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 400;
-  margin: 0 0 48px;
+  margin-bottom: 48px;
 }
 
 .promise-container h2 span {
@@ -626,8 +605,8 @@ body.lightbox-open {
 
 .promise-card {
   background: #202020;
-  border: 1px solid rgba(255, 255, 255, .12);
-  padding: 42px 38px;
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 42px 30px;
   min-height: 245px;
 }
 
@@ -640,24 +619,66 @@ body.lightbox-open {
 }
 
 .promise-card h3 {
-  color: #ffffff;
+  color: #fff;
   font-size: 12px;
   letter-spacing: 2px;
-  margin: 0 0 16px;
+  margin-bottom: 16px;
 }
 
 .promise-card p {
   color: #bdbdbd;
   font-size: 14px;
   line-height: 1.8;
-  margin: 0;
+  margin-bottom: 8px;
+}
+
+.promise-card strong {
+  color: #fff;
 }
 
 .promise-brand {
-  color: #888888;
+  color: #888;
   font-size: 10px;
   letter-spacing: 3px;
-  margin: 38px 0 0;
+  margin-top: 30px;
+}
+
+/* CONTACT - GOLD BACKGROUND */
+
+.contact {
+  background: var(--gold);
+  color: #111;
+  text-align: center;
+  margin-top: 0;
+  padding: 75px 10%;
+}
+
+.contact .eyebrow {
+  color: #333;
+}
+
+.contact h2 {
+  color: #111;
+  max-width: 750px;
+  margin: 0 auto 25px;
+}
+
+.contact > p:not(.eyebrow) {
+  margin: 0 auto 35px;
+  color: #333;
+  font-size: 15px;
+}
+
+.contact .btn {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+.contact .btn:hover {
+  background: transparent;
+  color: #111;
+  border-color: #111;
 }
 
 /* FOOTER */
@@ -665,15 +686,14 @@ body.lightbox-open {
 footer {
   padding: 30px 7%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  gap: 20px;
+  flex-wrap: wrap;
   background: #080808;
   color: #999;
   font-size: 11px;
   letter-spacing: 1px;
-  text-align: center;
 }
 
 .footer-contact {
@@ -688,7 +708,6 @@ footer {
 .footer-contact a {
   color: var(--gold);
   font-size: 12px;
-  text-decoration: none;
   transition: opacity .2s ease;
 }
 
@@ -700,24 +719,10 @@ footer {
 
 @media (max-width: 768px) {
 
-  header.header {
-    height: auto;
-    min-height: 0;
-    padding: 16px 5%;
+  .header {
+    padding: 20px 6%;
     flex-direction: column;
-    gap: 14px;
-  }
-
-  .header .logo {
-    font-size: 25px;
-    letter-spacing: 1px;
-  }
-
-  .header nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    gap: 18px;
   }
 
   nav {
@@ -744,32 +749,9 @@ footer {
     padding: 75px 7%;
   }
 
-  /* MOBILE PORTFOLIO */
-
   .portfolio-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
+    grid-template-columns: 1fr;
     gap: 35px;
-    overflow: visible !important;
-  }
-
-  .portfolio-grid .portfolio-card {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  .portfolio-grid .portfolio-card img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    visibility: visible !important;
   }
 
   .portfolio-image {
@@ -783,17 +765,42 @@ footer {
   }
 
   .portfolio-card h3 {
-    display: block;
     font-size: 16px;
-    visibility: visible;
   }
 
-  .category-hint {
+  /* ABOUT MOBILE - ORIGINAL WHITE LOOK */
+
+  .about {
+    background: #fff;
+    color: #111;
+  }
+
+  .about-layout {
     display: block;
-    visibility: visible;
   }
 
-  /* GALLERY MOBILE - NATURAL PHOTO RATIO */
+  .about-photo {
+    display: none !important;
+  }
+
+  .about-content .eyebrow {
+    color: #888;
+  }
+
+  .about-content h2 {
+    color: #111;
+    margin-bottom: 30px;
+  }
+
+  .about-content p:not(.eyebrow) {
+    color: #777;
+  }
+
+  .about-content strong {
+    color: #111;
+  }
+
+  /* GALLERY MOBILE */
 
   .gallery-grid {
     columns: 2;
@@ -802,11 +809,6 @@ footer {
 
   .gallery-item {
     margin-bottom: 12px;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: auto;
   }
 
   .top-back {
@@ -865,7 +867,7 @@ footer {
     gap: 20px;
   }
 
-  /* CUSTOM PRICING MOBILE */
+  /* PRICING MOBILE */
 
   .pricing-description {
     font-size: 16px;
@@ -888,7 +890,7 @@ footer {
   /* PROMISE MOBILE */
 
   .our-promise {
-    padding: 72px 6%;
+    padding: 70px 7% 45px;
   }
 
   .promise-cards {
@@ -898,6 +900,22 @@ footer {
   .promise-card {
     padding: 32px 26px;
     min-height: 0;
+  }
+
+  /* CONTACT MOBILE */
+
+  .contact {
+    background: var(--gold);
+    color: #111;
+    padding: 60px 7%;
+  }
+
+  .contact h2 {
+    color: #111;
+  }
+
+  .contact > p:not(.eyebrow) {
+    color: #333;
   }
 
   /* FOOTER MOBILE */
@@ -911,24 +929,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-  }
-}
-
-/* SMALL MOBILE HEADER */
-
-@media (max-width: 380px) {
-
-  .header .logo {
-    font-size: 22px;
-    letter-spacing: .5px;
-  }
-
-  .header nav {
-    gap: 8px 12px;
-  }
-
-  .header nav a {
-    font-size: 9px;
   }
 }
 
@@ -981,58 +981,3 @@ footer {
     height: 31px;
   }
 }
-/* PROMISE AND CONTACT SECTION VISUAL UPDATE */
-
-/* Reduce space after Our Promise */
-.our-promise {
-  padding-bottom: 55px;
-}
-
-/* GOLDEN CONTACT SECTION */
-.contact {
-  background: #C6A66B;
-  color: #111111;
-  padding: 75px 10%;
-  margin-top: 0;
-}
-
-/* Contact heading */
-.contact h2 {
-  color: #111111;
-}
-
-/* Contact eyebrow */
-.contact .eyebrow {
-  color: #333333;
-}
-
-/* Contact description */
-.contact > p:not(.eyebrow) {
-  color: #333333;
-}
-
-/* Contact button */
-.contact .btn {
-  background: #111111;
-  color: #ffffff;
-  border: 1px solid #111111;
-}
-
-/* Contact button hover */
-.contact .btn:hover {
-  background: transparent;
-  color: #111111;
-  border-color: #111111;
-}
-
-/* MOBILE SPACING */
-@media (max-width: 768px) {
-  .our-promise {
-    padding-bottom: 45px;
-  }
-
-  .contact {
-    padding: 60px 7%;
-  }
-}
-
