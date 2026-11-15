@@ -111,6 +111,8 @@ nav a:hover {
   color: var(--gold);
 }
 
+/* HERO PARAGRAPH */
+
 .hero > p:not(.eyebrow) {
   max-width: 540px;
   color: #bbb;
@@ -451,62 +453,74 @@ body.lightbox-open {
   max-width: 650px;
 }
 
-/* ABOUT SECTION - DESKTOP BLACK & GOLD */
+/* ABOUT SECTION - DESKTOP REFERENCE DESIGN */
 
 .about {
   background: #080808;
-  color: #fff;
+  color: #ffffff;
+  padding: 90px 7%;
 }
 
 .about-layout {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
   gap: 65px;
-  max-width: 1400px;
+  width: 100%;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 .about-content {
+  width: 100%;
   min-width: 0;
 }
 
 .about-content .eyebrow {
   color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
 }
 
 .about-content h2 {
-  color: #fff;
-  max-width: 650px;
-  margin-bottom: 45px;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  line-height: 1.65;
+  font-weight: 400;
+  margin-bottom: 42px;
 }
 
 .about-content p:not(.eyebrow) {
-  color: #ddd;
-  font-size: 15px;
-  max-width: 720px;
+  color: #dddddd;
+  font-size: 14px;
+  line-height: 1.75;
   margin-bottom: 12px;
+  max-width: 100%;
 }
 
 .about-content strong {
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .about-photo {
   display: block;
   width: 100%;
-  max-width: 560px;
+  max-width: 450px;
+  height: 450px;
   margin-left: auto;
   overflow: hidden;
-  background: #000;
+  background: #000000;
 }
 
 .about-photo img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* PROCESS */
@@ -768,11 +782,11 @@ footer {
     font-size: 16px;
   }
 
-  /* ABOUT MOBILE - ORIGINAL WHITE LOOK */
+  /* ABOUT MOBILE - WHITE DESIGN, NO PHOTO */
 
   .about {
-    background: #fff;
-    color: #111;
+    background: #ffffff;
+    color: #111111;
   }
 
   .about-layout {
@@ -784,20 +798,20 @@ footer {
   }
 
   .about-content .eyebrow {
-    color: #888;
+    color: #888888;
   }
 
   .about-content h2 {
-    color: #111;
+    color: #111111;
     margin-bottom: 30px;
   }
 
   .about-content p:not(.eyebrow) {
-    color: #777;
+    color: #777777;
   }
 
   .about-content strong {
-    color: #111;
+    color: #111111;
   }
 
   /* GALLERY MOBILE */
@@ -979,5 +993,27 @@ footer {
   .whatsapp-float svg {
     width: 31px;
     height: 31px;
+  }
+}
+
+/* ABOUT SECTION - ALIGN WITH HOW WE WORK */
+
+@media (min-width: 769px) {
+  .about {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .about-layout {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 65px;
+  }
+
+  .about-photo {
+    max-width: 450px;
+    margin-left: auto;
   }
 }
