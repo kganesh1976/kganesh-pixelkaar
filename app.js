@@ -1,7 +1,53 @@
-
 // K. GANESH PIXELKAAR - WEBSITE JAVASCRIPT
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  // SUBTLE HERO PARALLAX - DESKTOP POINTER DEVICES ONLY
+
+  const hero = document.querySelector(".hero");
+  const heroScene = document.querySelector(".hero-scene");
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const finePointer = window.matchMedia(
+    "(pointer: fine)"
+  ).matches;
+
+  if (hero && heroScene && !reducedMotion && finePointer) {
+
+    hero.addEventListener("pointermove", function (event) {
+
+      const bounds = hero.getBoundingClientRect();
+
+      const offsetX =
+        ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+
+      const offsetY =
+        ((event.clientY - bounds.top) / bounds.height - 0.5) * 8;
+
+      heroScene.style.setProperty(
+        "--pointer-x",
+        offsetX.toFixed(1) + "px"
+      );
+
+      heroScene.style.setProperty(
+        "--pointer-y",
+        offsetY.toFixed(1) + "px"
+      );
+
+    });
+
+    hero.addEventListener("pointerleave", function () {
+
+      heroScene.style.setProperty("--pointer-x", "0px");
+      heroScene.style.setProperty("--pointer-y", "0px");
+
+    });
+
+  }
+
 
   // COPYRIGHT YEAR
 
@@ -23,11 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       if (target) {
+
         event.preventDefault();
 
         target.scrollIntoView({
-          behavior: "smooth"
+          behavior: reducedMotion ? "auto" : "smooth"
         });
+
       }
 
     });
@@ -57,8 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "wedding-11.jpg",
         "wedding-12.jpg",
         "wedding-13.jpg",
-
-        // NEW WEDDING PHOTOS
         "087A7042.JPG",
         "087A7060.JPG",
         "087A7100.JPG",
@@ -71,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
 
-    // WEDDING ALBUM DESIGNING GALLERY
+    // WEDDING ALBUM DESIGNING
 
     weddingAlbum: {
       eyebrow: "PROFESSIONAL WEDDING ALBUM DESIGNING",
@@ -116,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Our Corporate Gallery",
       folder: "images/corporate/",
       files: [
-        // EXISTING CORPORATE PHOTOS
         "corporate-1.jpg",
         "corporate-2.jpg",
         "corporate-3.jpg",
@@ -131,8 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "corporate-12.jpg",
         "corporate-13.jpg",
         "corporate-14.jpg",
-
-        // NEW CORPORATE PHOTOS
         "Corporate- (1).JPG",
         "Corporate- (2).jpg",
         "Corporate- (3).jpg",
@@ -162,8 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Pre-Wedding Photo Manipulation & Enhancement",
       folder: "images/pre-wedding/",
       files: [
-
-        // EXISTING 7 PHOTOS
         "manipulation-1.jpg",
         "manipulation-2.jpg",
         "manipulation-3.jpg",
@@ -171,8 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "manipulation-5.jpg",
         "manipulation-6.jpg",
         "manipulation-7.jpg",
-
-        // NEW 17 PHOTOS
         "DSC06206.jpeg",
         "DSC08415.jpeg",
         "DSC08470.jpeg",
@@ -214,6 +253,32 @@ document.addEventListener("DOMContentLoaded", function () {
         "Beauty (12).jpg",
         "Beauty (13).jpg",
         "Beauty (14).jpg"
+      ]
+    },
+
+
+    // SOCIAL MEDIA CREATIVES
+
+    socialMedia: {
+      eyebrow: "SOCIAL MEDIA CREATIVES",
+      title: "Social Media Creatives Gallery",
+      folder: "images/Social%20Media%20Creatives/",
+      files: [
+        "Social.jpg",
+        "Social (1).jpg",
+        "Social (2).jpg",
+        "Social (3).jpg",
+        "Social (4).jpg",
+        "Social (6).jpg",
+        "Social (7).jpg",
+        "Social (8).jpg",
+        "Social (9).jpg",
+        "Social (10).jpg",
+        "Social (11).jpg",
+        "Social (12).jpg",
+        "Social (13).jpg",
+        "Social (15).jpg",
+        "Social (14).jpg"
       ]
     }
 
@@ -285,8 +350,10 @@ document.addEventListener("DOMContentLoaded", function () {
     !previousButton ||
     !nextButton
   ) {
+
     console.error("Website gallery elements are missing.");
     return;
+
   }
 
 
@@ -319,6 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image.loading = "lazy";
       image.src = data.folder + filename;
 
+
       // CORPORATE IMAGE EXTENSION FALLBACK
 
       if (data.tryUppercaseExtension) {
@@ -328,17 +396,23 @@ document.addEventListener("DOMContentLoaded", function () {
         image.addEventListener("error", function () {
 
           if (image.dataset.alternateTried === "true") {
+
             console.error("Image not found:", image.src);
             imageWrapper.classList.add("image-error");
             return;
+
           }
 
           image.dataset.alternateTried = "true";
 
           if (image.src.endsWith(".jpg")) {
+
             image.src = image.src.slice(0, -4) + ".JPG";
+
           } else if (image.src.endsWith(".JPG")) {
+
             image.src = image.src.slice(0, -4) + ".jpg";
+
           }
 
         });
@@ -346,8 +420,10 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
 
         image.addEventListener("error", function () {
+
           console.error("Image not found:", image.src);
           imageWrapper.classList.add("image-error");
+
         });
 
       }
@@ -360,7 +436,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const visibleImages = Array.from(
           galleryGrid.querySelectorAll(".gallery-item img")
         ).filter(function (img) {
+
           return img.complete && img.naturalWidth > 0;
+
         });
 
         currentImages = visibleImages;
@@ -383,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryGallery.hidden = false;
 
     categoryGallery.scrollIntoView({
-      behavior: "smooth",
+      behavior: reducedMotion ? "auto" : "smooth",
       block: "start"
     });
 
@@ -414,10 +492,12 @@ document.addEventListener("DOMContentLoaded", function () {
     portfolioCategories.hidden = false;
 
     if (portfolioSection) {
+
       portfolioSection.scrollIntoView({
-        behavior: "smooth",
+        behavior: reducedMotion ? "auto" : "smooth",
         block: "start"
       });
+
     }
 
   }
@@ -535,6 +615,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   console.log("K. GANESH PIXELKAAR website initialized.");
-  console.log("Wedding Photography, Wedding Album Designing, Newborn, Corporate, Pre-Wedding Photo Manipulation and Beauty galleries ready.");
+
+  console.log(
+    "Corporate, Beauty, Newborn, Pre-Wedding, Wedding, Album and Social Media galleries ready."
+  );
 
 });

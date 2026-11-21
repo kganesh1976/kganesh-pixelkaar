@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
 
 :root {
@@ -74,29 +73,279 @@ nav a:hover {
   opacity: .5;
 }
 
-/* HERO SECTION */
+/* HERO - NATURAL SUNLIGHT & OLIVE LEAF SHADOWS */
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 690px;
   padding: 140px 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background: #111;
-  color: white;
+  background:
+    radial-gradient(ellipse at 78% 18%, rgba(255,248,224,.95) 0%, rgba(255,248,224,0) 42%),
+    linear-gradient(115deg, #e9dfca 0%, #d8c9ad 48%, #c9b894 100%);
+  color: #24251f;
 }
 
-.eyebrow {
-  font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: 600;
-  margin-bottom: 22px;
-  color: var(--grey);
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  --pointer-x: 0px;
+  --pointer-y: 0px;
+}
+
+.hero-window-light {
+  position: absolute;
+  inset: -18% -10%;
+  opacity: .72;
+  background:
+    linear-gradient(108deg, transparent 0 34%, rgba(255,251,231,.52) 34.5% 49%, transparent 49.5%),
+    linear-gradient(108deg, transparent 0 51%, rgba(255,250,226,.34) 51.5% 65%, transparent 65.5%),
+    linear-gradient(90deg, transparent 0 72%, rgba(255,251,235,.22) 72.5% 73.2%, transparent 73.7%),
+    linear-gradient(0deg, transparent 0 24%, rgba(119,99,66,.12) 24.2% 24.8%, transparent 25.2%);
+  transform: translate3d(var(--pointer-x), var(--pointer-y), 0);
+  animation: sunlightDrift 18s ease-in-out infinite alternate;
+}
+
+/* LEAF SHADOW CONTAINER */
+
+.hero-leaf-shadows {
+  position: absolute;
+  inset: -12% -8% -10% 35%;
+  width: 73%;
+  height: 125%;
+  opacity: .25;
+  filter: blur(4px);
+  transform: translate3d(var(--pointer-x), var(--pointer-y), 0);
+  background: none;
+  pointer-events: none;
+}
+
+/* OLIVE BRANCH */
+
+.olive-branch {
+  position: absolute;
+  width: 440px;
+  height: 650px;
+  transform-origin: 50% 10%;
+  animation: oliveSway 12s ease-in-out infinite alternate;
+}
+
+/* BRANCH STEM */
+
+.olive-branch::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(48, 57, 36, .66);
+  transform: rotate(25deg);
+  filter: blur(1px);
+}
+
+/* INDIVIDUAL OLIVE LEAVES */
+
+.olive-leaf {
+  position: absolute;
+  display: block;
+  width: 76px;
+  height: 27px;
+  border-radius: 100% 0 100% 0;
+  background: rgba(48, 57, 36, .72);
+  box-shadow: 0 0 12px rgba(48, 57, 36, .16);
+  filter: blur(1px);
+}
+
+/* BRANCH ONE */
+
+.branch-one {
+  top: -80px;
+  right: 8%;
+  transform: rotate(15deg);
+  animation-duration: 13s;
+}
+
+.branch-one .leaf-1 {
+  top: 70px;
+  left: 110px;
+  transform: rotate(-28deg);
+}
+
+.branch-one .leaf-2 {
+  top: 115px;
+  left: 205px;
+  transform: rotate(150deg);
+}
+
+.branch-one .leaf-3 {
+  top: 170px;
+  left: 75px;
+  transform: rotate(-35deg);
+}
+
+.branch-one .leaf-4 {
+  top: 220px;
+  left: 220px;
+  transform: rotate(145deg);
+}
+
+.branch-one .leaf-5 {
+  top: 280px;
+  left: 35px;
+  transform: rotate(-42deg);
+}
+
+.branch-one .leaf-6 {
+  top: 325px;
+  left: 190px;
+  transform: rotate(155deg);
+}
+
+.branch-one .leaf-7 {
+  top: 390px;
+  left: 5px;
+  transform: rotate(-35deg);
+}
+
+.branch-one .leaf-8 {
+  top: 435px;
+  left: 165px;
+  transform: rotate(145deg);
+}
+
+.branch-one .leaf-9 {
+  top: 495px;
+  left: 35px;
+  transform: rotate(-25deg);
+}
+
+.branch-one .leaf-10 {
+  top: 540px;
+  left: 145px;
+  transform: rotate(155deg);
+}
+
+/* BRANCH TWO */
+
+.branch-two {
+  top: 90px;
+  right: 38%;
+  transform: rotate(-28deg) scale(.78);
+  opacity: .78;
+  animation-duration: 16s;
+  animation-delay: -4s;
+}
+
+.branch-two .leaf-1 {
+  top: 55px;
+  left: 105px;
+  transform: rotate(-35deg);
+}
+
+.branch-two .leaf-2 {
+  top: 110px;
+  left: 205px;
+  transform: rotate(145deg);
+}
+
+.branch-two .leaf-3 {
+  top: 175px;
+  left: 70px;
+  transform: rotate(-30deg);
+}
+
+.branch-two .leaf-4 {
+  top: 235px;
+  left: 210px;
+  transform: rotate(150deg);
+}
+
+.branch-two .leaf-5 {
+  top: 300px;
+  left: 35px;
+  transform: rotate(-40deg);
+}
+
+.branch-two .leaf-6 {
+  top: 360px;
+  left: 175px;
+  transform: rotate(145deg);
+}
+
+.branch-two .leaf-7 {
+  top: 425px;
+  left: 15px;
+  transform: rotate(-28deg);
+}
+
+.branch-two .leaf-8 {
+  top: 475px;
+  left: 145px;
+  transform: rotate(155deg);
+}
+
+/* CURTAIN SHADOW */
+
+.hero-curtain {
+  position: absolute;
+  top: -8%;
+  right: 0;
+  width: clamp(42px, 8vw, 115px);
+  height: 118%;
+  opacity: .32;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,245,.78) 0 9px,
+      rgba(150,133,105,.16) 10px 14px,
+      rgba(255,255,245,.42) 15px 24px
+    );
+  filter: blur(1px);
+  transform-origin: top center;
+  animation: curtainSway 7s ease-in-out infinite alternate;
+}
+
+/* WALL TEXTURE */
+
+.hero-wall-texture {
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 4px,
+      rgba(80, 68, 45, .08) 5px,
+      transparent 6px 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 7px,
+      rgba(255, 255, 255, .12) 8px,
+      transparent 9px 14px
+    );
+  pointer-events: none;
+}
+
+/* HERO CONTENT */
+
+.hero > *:not(.hero-scene) {
+  position: relative;
+  z-index: 2;
 }
 
 .hero .eyebrow {
-  color: #aaa;
+  color: #6c604c;
 }
 
 .hero h1 {
@@ -105,19 +354,49 @@ nav a:hover {
   line-height: 1.08;
   font-weight: 400;
   margin-bottom: 25px;
+  color: #25251f;
 }
 
 .hero h1 span {
-  color: var(--gold);
+  color: #8d7046;
 }
-
-/* HERO PARAGRAPH */
 
 .hero > p:not(.eyebrow) {
   max-width: 540px;
-  color: #bbb;
+  color: #514b40;
   font-size: 16px;
   margin-bottom: 35px;
+}
+
+/* HERO ANIMATION */
+
+@keyframes sunlightDrift {
+  from {
+    transform: translate3d(-7px, -3px, 0) scale(1);
+  }
+  to {
+    transform: translate3d(13px, 8px, 0) scale(1.035);
+  }
+}
+
+@keyframes oliveSway {
+  from {
+    rotate: -4deg;
+    translate: -5px -3px;
+  }
+  to {
+    rotate: 4deg;
+    translate: 8px 5px;
+  }
+}
+
+@keyframes curtainSway {
+  from {
+    transform: skewY(-1.5deg) translateX(0);
+  }
+  to {
+    transform: skewY(1.5deg) translateX(-7px);
+  }
 }
 
 /* BUTTON */
@@ -125,18 +404,18 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 15px 30px;
-  background: white;
-  color: black;
+  background: #24251f;
+  color: white;
   font-size: 11px;
   letter-spacing: 2px;
   font-weight: 600;
-  border: 1px solid white;
+  border: 1px solid #24251f;
   transition: .3s;
 }
 
 .btn:hover {
   background: transparent;
-  color: white;
+  color: #24251f;
 }
 
 /* SECTION SPACING */
@@ -148,6 +427,14 @@ nav a:hover {
 .contact,
 .custom-pricing {
   padding: 110px 10%;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: var(--grey);
 }
 
 h2 {
@@ -226,15 +513,13 @@ h2 {
   display: none !important;
 }
 
-/* BACK TO PORTFOLIO BUTTONS */
+/* BACK TO PORTFOLIO */
 
 .back-to-portfolio {
   font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   transition: all .3s ease;
 }
-
-/* TOP BUTTON */
 
 .top-back {
   display: inline-flex;
@@ -260,8 +545,6 @@ h2 {
   border-color: #444;
 }
 
-/* GALLERY HEADING */
-
 .category-gallery h2 {
   margin-bottom: 20px;
 }
@@ -273,7 +556,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* MASONRY GALLERY - ORIGINAL PHOTO PROPORTIONS */
+/* MASONRY GALLERY */
 
 .gallery-grid {
   columns: 3;
@@ -330,7 +613,7 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* IMAGE LIGHTBOX */
+/* LIGHTBOX */
 
 body.lightbox-open {
   overflow: hidden;
@@ -453,7 +736,7 @@ body.lightbox-open {
   max-width: 650px;
 }
 
-/* ABOUT SECTION - DESKTOP REFERENCE DESIGN */
+/* ABOUT */
 
 .about {
   background: #080808;
@@ -657,7 +940,7 @@ body.lightbox-open {
   margin-top: 30px;
 }
 
-/* CONTACT - GOLD BACKGROUND */
+/* CONTACT */
 
 .contact {
   background: var(--gold);
@@ -754,6 +1037,40 @@ footer {
     padding: 90px 7%;
   }
 
+  .hero-leaf-shadows {
+    inset: -8% -30% -10% 15%;
+    width: 115%;
+    height: 120%;
+    opacity: .20;
+    filter: blur(5px);
+  }
+
+  .olive-branch {
+    transform: scale(.72);
+  }
+
+  .branch-one {
+    right: -12%;
+  }
+
+  .branch-two {
+    right: 28%;
+  }
+
+  .olive-leaf {
+    width: 65px;
+    height: 23px;
+  }
+
+  .hero-window-light {
+    opacity: .58;
+  }
+
+  .hero-curtain {
+    width: 34px;
+    opacity: .22;
+  }
+
   .portfolio,
   .services,
   .about,
@@ -782,7 +1099,7 @@ footer {
     font-size: 16px;
   }
 
-  /* ABOUT MOBILE - WHITE DESIGN, NO PHOTO */
+  /* ABOUT MOBILE */
 
   .about {
     background: #ffffff;
@@ -793,8 +1110,10 @@ footer {
     display: block;
   }
 
-  .about-photo {
+  .about-photo,
+  .about-photo img {
     display: none !important;
+    visibility: hidden !important;
   }
 
   .about-content .eyebrow {
@@ -946,7 +1265,30 @@ footer {
   }
 }
 
-/* FLOATING WHATSAPP CONTACT BUTTON */
+/* ABOUT ALIGNMENT WITH HOW WE WORK - DESKTOP */
+
+@media (min-width: 769px) {
+
+  .about {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .about-layout {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 65px;
+  }
+
+  .about-photo {
+    max-width: 450px;
+    margin-left: auto;
+  }
+}
+
+/* FLOATING WHATSAPP */
 
 .whatsapp-float {
   position: fixed;
@@ -996,24 +1338,19 @@ footer {
   }
 }
 
-/* ABOUT SECTION - ALIGN WITH HOW WE WORK */
+/* ACCESSIBILITY: REDUCE HERO MOTION */
 
-@media (min-width: 769px) {
-  .about {
-    padding-left: 10%;
-    padding-right: 10%;
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-window-light,
+  .hero-leaf-shadows,
+  .olive-branch,
+  .hero-curtain {
+    animation: none !important;
+    transform: none !important;
   }
 
-  .about-layout {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 65px;
-  }
-
-  .about-photo {
-    max-width: 450px;
-    margin-left: auto;
+  html {
+    scroll-behavior: auto;
   }
 }
